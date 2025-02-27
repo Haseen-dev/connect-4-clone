@@ -5,14 +5,15 @@ import "../Game.css"
 //   alert("on click" + id);
 // };
 
-const GameCircle = ({ id, onCircleClicked }) => {
+const GameCircle = ({ id, onCircleClicked,className }) => {
   const style={
     //color: name === "red" ? "red" : "blue",
     //backgroundColor: name === "red" ? "red" : "blue",
     height:"100px",
     width:"100px",
     margin:"10px",
-    borderRadius:"50%"
+    borderRadius:"50%",
+    border:"5px solid black"
   }
   return (
     // <div
@@ -22,7 +23,7 @@ const GameCircle = ({ id, onCircleClicked }) => {
     //   {name}
     // </div>
      <div
-     className={`${id%2===0?"even":"odd"}`}
+     className={`${className}`}
      onClick={() => onCircleClicked(id)}
      style={style}
    >

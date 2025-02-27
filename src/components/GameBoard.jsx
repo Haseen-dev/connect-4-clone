@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import GameCircle from "./GameCircle";
+import "../Game.css";
+
+const No_Player = 0;
+const Player_1 = 1;
+const Player_2 = 2;
 
 const GameBoard = () => {
+  const [gameboard, setGameboard] = useState(Array(16).fill(No_Player));
+  const [currentPlayer, setCurrentPlayer] = useState(Player_1);
   const style = {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
@@ -14,27 +21,40 @@ const GameBoard = () => {
     left: "50%",
     marginLeft: "-250px",
   };
-  const clickedCirle=(id)=>{
-    console.log("circle clicked"+id);
-  }
+  const clickedCirle = (id) => {
+    //console.log("circle clicked" + id);
+    //this is also update the array state like spread operator
+    gameboard[id] = currentPlayer;
+    setGameboard(gameboard);
+    console.log(gameboard);
+    setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1);
+
+    // spread operator
+    // const board = gameboard;
+    // board[id] = currentPlayer;
+    // console.log(board);
+    // setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1);
+  };
+  const renderCircle = (id) => {
+    return (
+      <GameCircle
+        id={id}
+        onCircleClicked={clickedCirle}
+        className={`player_${gameboard[id]}`}
+      />
+    );
+  };
   return (
     <div style={style}>
-      <GameCircle id={1}  onCircleClicked={clickedCirle}/>
-      <GameCircle id={2}  onCircleClicked={clickedCirle}/>
-      <GameCircle id={3}  onCircleClicked={clickedCirle}/>
-      <GameCircle id={4}  onCircleClicked={clickedCirle}/>
-      <GameCircle id={5}  onCircleClicked={clickedCirle}/>
-      <GameCircle id={6}  onCircleClicked={clickedCirle}/>
-      <GameCircle id={7}  onCircleClicked={clickedCirle}/>
-      <GameCircle id={8}  onCircleClicked={clickedCirle}/>
-      <GameCircle id={9}  onCircleClicked={clickedCirle}/>
-      <GameCircle id={10} onCircleClicked={clickedCirle} />
-      <GameCircle id={11} onCircleClicked={clickedCirle} />
-      <GameCircle id={12} onCircleClicked={clickedCirle} />
-      <GameCircle id={13} onCircleClicked={clickedCirle} />
-      <GameCircle id={14} onCircleClicked={clickedCirle} />
-      <GameCircle id={15} onCircleClicked={clickedCirle} />
-      <GameCircle id={16} onCircleClicked={clickedCirle} />
+      {renderCircle(0)}
+      {renderCircle(1)}
+      {renderCircle(2)}
+      {renderCircle(3)}
+      {renderCircle(4)}
+      {renderCircle(5)}
+      {renderCircle(6)}
+      {renderCircle(7)}
+      {renderCircle(8)}
     </div>
   );
 };
