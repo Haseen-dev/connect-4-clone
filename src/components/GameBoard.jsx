@@ -51,7 +51,7 @@ const GameBoard = () => {
     // board[id] = currentPlayer;
     // setGameboard(board)
     // console.log(board);
-    if(isWinner(gameboard)){
+    if(isWinner(gameboard,id,currentPlayer)){
       console.log("Winner");
       
     }
