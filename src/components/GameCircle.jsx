@@ -1,13 +1,13 @@
 import React from "react";
 import "../Game.css"
 
-const onclick = (id) => {
-  alert("on click" + id);
-};
+// const onclick = (id) => {
+//   alert("on click" + id);
+// };
 
-const GameCircle = ({ id, name }) => {
+const GameCircle = ({ id, onCircleClicked }) => {
   const style={
-    color: name === "red" ? "red" : "blue",
+    //color: name === "red" ? "red" : "blue",
     //backgroundColor: name === "red" ? "red" : "blue",
     height:"100px",
     width:"100px",
@@ -23,10 +23,9 @@ const GameCircle = ({ id, name }) => {
     // </div>
      <div
      className={`${id%2===0?"even":"odd"}`}
-     onClick={() => onclick(id)}
+     onClick={() => onCircleClicked(id)}
      style={style}
    >
-     {name}
    </div>
   );
 };

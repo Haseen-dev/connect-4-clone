@@ -14,24 +14,27 @@ const GameBoard = () => {
     left: "50%",
     marginLeft: "-250px",
   };
+  const clickedCirle=(id)=>{
+    console.log("circle clicked"+id);
+  }
   return (
     <div style={style}>
-      <GameCircle id={1} />
-      <GameCircle id={2} />
-      <GameCircle id={3} />
-      <GameCircle id={4} />
-      <GameCircle id={5} />
-      <GameCircle id={6} />
-      <GameCircle id={7} />
-      <GameCircle id={8} />
-      <GameCircle id={9} />
-      <GameCircle id={10} />
-      <GameCircle id={11} />
-      <GameCircle id={12} />
-      <GameCircle id={13} />
-      <GameCircle id={14} />
-      <GameCircle id={15} />
-      <GameCircle id={16} />
+      <GameCircle id={1}  onCircleClicked={clickedCirle}/>
+      <GameCircle id={2}  onCircleClicked={clickedCirle}/>
+      <GameCircle id={3}  onCircleClicked={clickedCirle}/>
+      <GameCircle id={4}  onCircleClicked={clickedCirle}/>
+      <GameCircle id={5}  onCircleClicked={clickedCirle}/>
+      <GameCircle id={6}  onCircleClicked={clickedCirle}/>
+      <GameCircle id={7}  onCircleClicked={clickedCirle}/>
+      <GameCircle id={8}  onCircleClicked={clickedCirle}/>
+      <GameCircle id={9}  onCircleClicked={clickedCirle}/>
+      <GameCircle id={10} onCircleClicked={clickedCirle} />
+      <GameCircle id={11} onCircleClicked={clickedCirle} />
+      <GameCircle id={12} onCircleClicked={clickedCirle} />
+      <GameCircle id={13} onCircleClicked={clickedCirle} />
+      <GameCircle id={14} onCircleClicked={clickedCirle} />
+      <GameCircle id={15} onCircleClicked={clickedCirle} />
+      <GameCircle id={16} onCircleClicked={clickedCirle} />
     </div>
   );
 };
