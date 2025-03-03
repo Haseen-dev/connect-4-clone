@@ -24,16 +24,17 @@ const GameBoard = () => {
   const clickedCirle = (id) => {
     //console.log("circle clicked" + id);
     //this is also update the array state like spread operator
-    gameboard[id] = currentPlayer;
-    setGameboard(gameboard);
-    console.log(gameboard);
-    setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1);
+    // gameboard[id] = currentPlayer;
+    // setGameboard(gameboard);
+    // console.log(gameboard);
+    // setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1);
 
     // spread operator
-    // const board = gameboard;
-    // board[id] = currentPlayer;
-    // console.log(board);
-    // setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1);
+    const board = gameboard;
+    board[id] = currentPlayer;
+    setGameboard(board)
+    console.log(board);
+    setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1);
   };
   const renderCircle = (id) => {
     return (
