@@ -30,10 +30,17 @@ const GameBoard = () => {
     // setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1);
 
     // spread operator
-    const board = gameboard;
-    board[id] = currentPlayer;
-    setGameboard(board)
-    console.log(board);
+    // const board = gameboard;
+    // board[id] = currentPlayer;
+    // setGameboard(board)
+    // console.log(board);
+
+    setGameboard(prev=>{
+      return prev.map((circle,pos)=>{
+        if(pos===id)return currentPlayer
+        return circle
+      })
+    });
     setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1);
   };
   const renderCircle = (id) => {
