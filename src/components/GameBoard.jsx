@@ -54,6 +54,7 @@ const GameBoard = () => {
   const renderCircle = (id) => {
     return (
       <GameCircle
+      key={id}
         id={id}
         onCircleClicked={clickedCirle}
         className={`player_${gameboard[id]}`}
