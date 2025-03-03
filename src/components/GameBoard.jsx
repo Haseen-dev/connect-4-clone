@@ -5,7 +5,7 @@ import "../Game.css";
 const No_Player = 0;
 const Player_1 = 1;
 const Player_2 = 2;
-
+const noOfCircles = 16;
 const GameBoard = () => {
   const [gameboard, setGameboard] = useState(Array(16).fill(No_Player));
   const [currentPlayer, setCurrentPlayer] = useState(Player_1);
@@ -21,6 +21,14 @@ const GameBoard = () => {
     left: "50%",
     marginLeft: "-250px",
   };
+
+  const initBoard = () => {
+    const circles = [];
+    for (let i = 0; i < noOfCircles; i++) {
+      circles.push(renderCircle(i));
+    }
+    return circles
+  };
   const clickedCirle = (id) => {
     //console.log("circle clicked" + id);
     //this is also update the array state like spread operator
@@ -35,11 +43,11 @@ const GameBoard = () => {
     // setGameboard(board)
     // console.log(board);
 
-    setGameboard(prev=>{
-      return prev.map((circle,pos)=>{
-        if(pos===id)return currentPlayer
-        return circle
-      })
+    setGameboard((prev) => {
+      return prev.map((circle, pos) => {
+        if (pos === id) return currentPlayer;
+        return circle;
+      });
     });
     setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1);
   };
@@ -52,19 +60,7 @@ const GameBoard = () => {
       />
     );
   };
-  return (
-    <div style={style}>
-      {renderCircle(0)}
-      {renderCircle(1)}
-      {renderCircle(2)}
-      {renderCircle(3)}
-      {renderCircle(4)}
-      {renderCircle(5)}
-      {renderCircle(6)}
-      {renderCircle(7)}
-      {renderCircle(8)}
-    </div>
-  );
+  return <div style={style}>{initBoard()}</div>;
 };
 
 export default GameBoard;
