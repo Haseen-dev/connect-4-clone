@@ -70,7 +70,7 @@ const GameBoard = () => {
   };
   return (
     <>
-      <Header />
+      <Header player={currentPlayer}/>
       <div style={style}>{initBoard()}</div>
       <Footer/>
     </>
