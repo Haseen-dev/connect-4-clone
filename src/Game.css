@@ -1,5 +1,14 @@
 body{
     background-color: cornflowerblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.app-container{
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    left: 50%;
+    top:10%;
+    margin-left: -400px;
 }
 .panel{
     position: absolute;
