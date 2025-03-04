@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import GameCircle from "./GameCircle";
 import "../Game.css";
+import Header from "./Header";
 
 const No_Player = 0;
 const Player_1 = 1;
@@ -20,6 +21,11 @@ const GameBoard = () => {
     top: "25%",
     left: "50%",
     marginLeft: "-250px",
+    backgroundColor: "bisque",
+    border: "8px solid burlywood",
+    borderRadius: "8%",
+    webkitBoxShadow: "7px 5px 15px 3px rgba(0,0,0,0.9)",
+    boxShadow: "7px 5px 15px 3px rgba(0,0,0,0.9)",
   };
 
   const initBoard = () => {
@@ -27,7 +33,7 @@ const GameBoard = () => {
     for (let i = 0; i < noOfCircles; i++) {
       circles.push(renderCircle(i));
     }
-    return circles
+    return circles;
   };
   const clickedCirle = (id) => {
     //console.log("circle clicked" + id);
@@ -54,14 +60,19 @@ const GameBoard = () => {
   const renderCircle = (id) => {
     return (
       <GameCircle
-      key={id}
+        key={id}
         id={id}
         onCircleClicked={clickedCirle}
         className={`player_${gameboard[id]}`}
       />
     );
   };
-  return <div style={style}>{initBoard()}</div>;
+  return (
+    <>
+      <Header />
+      <div style={style}>{initBoard()}</div>
+    </>
+  );
 };
 
 export default GameBoard;

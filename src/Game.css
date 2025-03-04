@@ -1,3 +1,29 @@
+.panel{
+    position: absolute;
+    background-color: lightgoldenrodyellow;
+    border: 8px solid burlywood;
+    box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9);
+    z-index: 1;
+}
+.header{
+    left: 50%;
+    top: 90px;
+    height: 90px;
+    width: 300px;
+    margin-left: -120px;   
+}
+
+.header-text{
+    font-size: 30px;
+    font-weight: bold;
+    width: 200px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
 .player_0{
     background-color: white;
 }
