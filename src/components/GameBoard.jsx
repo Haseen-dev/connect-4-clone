@@ -57,7 +57,7 @@ const GameBoard = () => {
     // setGameboard(board)
     // console.log(board);
     if (isWinner(gameboard, id, currentPlayer)) {
-      console.log("Winner");
+      setGameState(GAME_STATE_WIN)
     }
     setGameboard((prev) => {
       return prev.map((circle, pos) => {
@@ -79,7 +79,7 @@ const GameBoard = () => {
   };
   return (
     <>
-      <Header player={currentPlayer} />
+      <Header gameState={gameState} player={currentPlayer} />
       <div style={style}>{initBoard()}</div>
       <Footer />
     </>
