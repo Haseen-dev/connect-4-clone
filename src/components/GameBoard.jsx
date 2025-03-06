@@ -57,6 +57,7 @@ const GameBoard = () => {
     // board[id] = currentPlayer;
     // setGameboard(board)
     // console.log(board);
+    if(gameboard[id]!==No_Player)return
     if (isWinner(gameboard, id, currentPlayer)) {
       setGameState(GAME_STATE_WIN);
       setWinPlayer(currentPlayer)
