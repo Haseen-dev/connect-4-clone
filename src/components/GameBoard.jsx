@@ -5,14 +5,19 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { isWinner } from "../Helper";
 
+import {
+  No_Player,
+  Player_1,
+  Player_2,
+  noOfCircles,
+  GAME_STATE_WIN,
+  GAME_STATE_PLAYING,
+} from "../Constant";
 
-const No_Player = 0;
-const Player_1 = 1;
-const Player_2 = 2;
-const noOfCircles = 16;
 const GameBoard = () => {
   const [gameboard, setGameboard] = useState(Array(16).fill(No_Player));
   const [currentPlayer, setCurrentPlayer] = useState(Player_1);
+  const [gameState,setGameState]=useState(GAME_STATE_PLAYING)
   const style = {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
@@ -51,9 +56,8 @@ const GameBoard = () => {
     // board[id] = currentPlayer;
     // setGameboard(board)
     // console.log(board);
-    if(isWinner(gameboard,id,currentPlayer)){
+    if (isWinner(gameboard, id, currentPlayer)) {
       console.log("Winner");
-      
     }
     setGameboard((prev) => {
       return prev.map((circle, pos) => {
@@ -75,9 +79,9 @@ const GameBoard = () => {
   };
   return (
     <>
-      <Header player={currentPlayer}/>
+      <Header player={currentPlayer} />
       <div style={style}>{initBoard()}</div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
