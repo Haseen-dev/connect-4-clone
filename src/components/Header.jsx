@@ -2,13 +2,13 @@ import React from "react";
 import "../Game.css";
 import { GAME_STATE_WIN, GAME_STATE_PLAYING } from "../Constant";
 
-const Header = ({ gameState, player }) => {
+const Header = ({ gameState, currentPlayer,winPlayer }) => {
   const renderLabel = () => {
     switch (gameState) {
       case GAME_STATE_PLAYING:
-        return <div>Player {player} Turn</div>;
+        return <div>Player {currentPlayer} Turn</div>;
       case GAME_STATE_WIN:
-        return <div>Player {player} wins</div>;
+        return <div>Player {winPlayer} wins</div>;
     }
   };
   return (

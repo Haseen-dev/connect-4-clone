@@ -17,7 +17,8 @@ import {
 const GameBoard = () => {
   const [gameboard, setGameboard] = useState(Array(16).fill(No_Player));
   const [currentPlayer, setCurrentPlayer] = useState(Player_1);
-  const [gameState,setGameState]=useState(GAME_STATE_PLAYING)
+  const [gameState, setGameState] = useState(GAME_STATE_PLAYING);
+  const [winPlayer, setWinPlayer] = useState(No_Player);
   const style = {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr 1fr",
@@ -57,7 +58,8 @@ const GameBoard = () => {
     // setGameboard(board)
     // console.log(board);
     if (isWinner(gameboard, id, currentPlayer)) {
-      setGameState(GAME_STATE_WIN)
+      setGameState(GAME_STATE_WIN);
+      setWinPlayer(currentPlayer)
     }
     setGameboard((prev) => {
       return prev.map((circle, pos) => {
@@ -79,7 +81,7 @@ const GameBoard = () => {
   };
   return (
     <>
-      <Header gameState={gameState} player={currentPlayer} />
+      <Header gameState={gameState} currentPlayer={currentPlayer} winPlayer={winPlayer}/>
       <div style={style}>{initBoard()}</div>
       <Footer />
     </>
