@@ -27,3 +27,7 @@ export const isWinner = (gameBoard,currentMove,currentPlayer) => {
   }
   return false;
 };
+
+export const isDraw=(gameBoard,currentMove,currentPlayer)=>{
+  
+}
