@@ -29,5 +29,6 @@ export const isWinner = (gameBoard,currentMove,currentPlayer) => {
 };
 
 export const isDraw=(gameBoard,currentMove,currentPlayer)=>{
-  
+  let board=[...gameBoard]
+  board[currentMove]=currentPlayer
 }
