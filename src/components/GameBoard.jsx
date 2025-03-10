@@ -101,7 +101,7 @@ const GameBoard = () => {
         winPlayer={winPlayer}
       />
       <div style={style}>{initBoard()}</div>
-      <Footer />
+      <Footer onClickEvent={initGame}/>
     </>
   );
 };
