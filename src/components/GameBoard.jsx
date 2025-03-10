@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import GameCircle from "./GameCircle";
 import "../Game.css";
 import Header from "./Header";
@@ -37,7 +37,14 @@ const GameBoard = () => {
     webkitBoxShadow: "7px 5px 15px 3px rgba(0,0,0,0.9)",
     boxShadow: "7px 5px 15px 3px rgba(0,0,0,0.9)",
   };
+  useEffect(() => {
+    initGame();
+  }, []);
 
+  const initGame = () => {
+    setGameboard(Array(16).fill(No_Player));
+    setCurrentPlayer(No_Player);
+  };
   const initBoard = () => {
     const circles = [];
     for (let i = 0; i < noOfCircles; i++) {
@@ -58,15 +65,15 @@ const GameBoard = () => {
     // board[id] = currentPlayer;
     // setGameboard(board)
     // console.log(board);
-    if(gameboard[id]!==No_Player)return
-    if(gameState!==GAME_STATE_PLAYING)return
+    if (gameboard[id] !== No_Player) return;
+    if (gameState !== GAME_STATE_PLAYING) return;
     if (isWinner(gameboard, id, currentPlayer)) {
       setGameState(GAME_STATE_WIN);
-      setWinPlayer(currentPlayer)
+      setWinPlayer(currentPlayer);
     }
     if (isDraw(gameboard, id, currentPlayer)) {
       setGameState(GAME_STATE_DRAW);
-      setWinPlayer(No_Player)
+      setWinPlayer(No_Player);
     }
     setGameboard((prev) => {
       return prev.map((circle, pos) => {
@@ -88,7 +95,11 @@ const GameBoard = () => {
   };
   return (
     <>
-      <Header gameState={gameState} currentPlayer={currentPlayer} winPlayer={winPlayer}/>
+      <Header
+        gameState={gameState}
+        currentPlayer={currentPlayer}
+        winPlayer={winPlayer}
+      />
       <div style={style}>{initBoard()}</div>
       <Footer />
     </>
