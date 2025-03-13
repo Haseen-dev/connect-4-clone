@@ -34,7 +34,6 @@ const GameBoard = () => {
     backgroundColor: "bisque",
     border: "8px solid burlywood",
     borderRadius: "8%",
-    webkitBoxShadow: "7px 5px 15px 3px rgba(0,0,0,0.9)",
     boxShadow: "7px 5px 15px 3px rgba(0,0,0,0.9)",
   };
   useEffect(() => {
