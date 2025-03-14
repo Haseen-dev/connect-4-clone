@@ -41,6 +41,8 @@ body{
     height: 80px;
     width: 300px;
     margin-left: -120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .footer button{
     position: relative;
