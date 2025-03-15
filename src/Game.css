@@ -55,6 +55,9 @@ body{
     border: 5px solid chocolate;
     font-weight: bold;
 }
+.footer button:hover{
+    background-color: chocolate;
+}
 .player_0{
     background-color: white;
 }
