@@ -45,11 +45,12 @@ body{
     grid-template-columns: 1fr 1fr;
 }
 .footer button{
-    margin-left: -35px;
-    width: 125px;
+    margin-left: 5px;
+    margin-top: 15px;
+    width: 140px;
     height: 50px;
     background-color: lightblue;
-    font-size: 15px;
+    font-size: 20px;
     box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9);
     border: 5px solid chocolate;
     font-weight: bold;
