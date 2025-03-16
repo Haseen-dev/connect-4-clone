@@ -51,6 +51,11 @@ const GameBoard = () => {
     }
     return circles;
   };
+
+  const suggestMove=()=>{
+    
+  }
+
   const clickedCirle = (id) => {
     //console.log("circle clicked" + id);
     //this is also update the array state like spread operator
@@ -100,7 +105,7 @@ const GameBoard = () => {
         winPlayer={winPlayer}
       />
       <div style={style}>{initBoard()}</div>
-      <Footer onClickEvent={initGame}/>
+      <Footer onNewGameClick={initGame} onSuggestClick={suggestMove}/>
     </>
   );
 };
