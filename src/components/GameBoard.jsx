@@ -53,6 +53,7 @@ const GameBoard = () => {
   };
 
   const suggestMove=()=>{
+    console.log("suggest move");
     
   }
 
