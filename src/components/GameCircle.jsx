@@ -7,8 +7,6 @@ import "../Game.css"
 
 const GameCircle = ({ id, onCircleClicked,className }) => {
   const style={
-    //color: name === "red" ? "red" : "blue",
-    //backgroundColor: name === "red" ? "red" : "blue",
     height:"100px",
     width:"100px",
     margin:"10px",

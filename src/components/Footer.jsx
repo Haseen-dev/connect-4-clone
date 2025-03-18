@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  GAME_STATE_WIN,
-  GAME_STATE_PLAYING,
-  GAME_STATE_DRAW,
-} from "../Constant";
+import { GAME_STATE_PLAYING } from "../Constant";
 const Footer = ({ onNewGameClick, onSuggestClick, gameState }) => {
   return (
     <div className="panel footer">

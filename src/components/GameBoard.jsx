@@ -26,7 +26,6 @@ const GameBoard = () => {
     gridTemplateRows: "1fr 1fr 1fr 1fr",
     padding: "20px",
     width: "500px",
-    // margin:"0 auto"
     position: "absolute",
     top: "25%",
     left: "50%",
