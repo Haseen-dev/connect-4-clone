@@ -43,6 +43,7 @@ const GameBoard = () => {
   const initGame = () => {
     setGameboard(Array(16).fill(No_Player));
     setCurrentPlayer(Player_1);
+    setGameState(GAME_STATE_PLAYING)
   };
   const initBoard = () => {
     const circles = [];
