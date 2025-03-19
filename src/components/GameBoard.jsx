@@ -3,7 +3,7 @@ import GameCircle from "./GameCircle";
 import "../Game.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import { getRandomComputerMove, isDraw, isWinner } from "../Helper";
+import { getComputerMove, isDraw, isWinner } from "../Helper";
 
 import {
   No_Player,
@@ -54,7 +54,7 @@ const GameBoard = () => {
   };
 
   const suggestMove=()=>{
-    clickedCirle(getRandomComputerMove(gameboard))
+    clickedCirle(getComputerMove(gameboard))
   }
 
   const clickedCirle = (id) => {

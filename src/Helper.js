@@ -36,7 +36,7 @@ export const isDraw = (gameBoard, currentMove, currentPlayer) => {
   return count === 0;
 };
 
-export const getRandomComputerMove = (gameBoard) => {
+const getRandomComputerMove = (gameBoard) => {
   let validMoves = [];
   for (let i = 0; i < gameBoard.length; i++) {
     if (gameBoard[i] === 0) {
@@ -67,6 +67,7 @@ export const getComputerMove = (gameBoard) => {
       max: 16,
       step: 16,
     },
+    //diagonal
     {
       indexes: [3, 6, 9, 12],
       max: 16,
