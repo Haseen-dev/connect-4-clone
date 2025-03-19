@@ -31,18 +31,46 @@ export const isWinner = (gameBoard, currentMove, currentPlayer) => {
 export const isDraw = (gameBoard, currentMove, currentPlayer) => {
   let board = [...gameBoard];
   board[currentMove] = currentPlayer;
-  let count = board.reduce((n, x) => n + (x === 0),0);
+  let count = board.reduce((n, x) => n + (x === 0), 0);
   console.log(`count ${count}`);
   return count === 0;
 };
 
-export const getComputerMove=(gameBoard)=>{
-  let validMoves=[];
-  for(let i=0;i<gameBoard.length;i++){
-    if(gameBoard[i]===0){
-      validMoves.push(i)
+export const getRandomComputerMove = (gameBoard) => {
+  let validMoves = [];
+  for (let i = 0; i < gameBoard.length; i++) {
+    if (gameBoard[i] === 0) {
+      validMoves.push(i);
     }
   }
-  let rndMove=Math.floor(Math.random()*validMoves.length)
-  return validMoves[rndMove]
-}
+  let rndMove = Math.floor(Math.random() * validMoves.length);
+  return validMoves[rndMove];
+};
+
+export const getComputerMove = (gameBoard) => {
+  let moveChecks = [
+    //vertices
+    {
+      indexes: [0, 4, 8, 12],
+      max: 4,
+      step: 1,
+    },
+    //horizontal
+    {
+      indexes: [0, 1, 2, 3],
+      max: 16,
+      step: 4,
+    },
+    //diagonal
+    {
+      indexes: [0, 5, 10, 15],
+      max: 16,
+      step: 16,
+    },
+    {
+      indexes: [3, 6, 9, 12],
+      max: 16,
+      step: 16,
+    },
+  ];
+};
