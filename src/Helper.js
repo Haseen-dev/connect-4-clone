@@ -47,6 +47,23 @@ const getRandomComputerMove = (gameBoard) => {
   return validMoves[rndMove];
 };
 
+const getPostion = (gameBoard, moveChecks) => {
+  for (let check = 0; check < moveChecks.length; check++) {
+    for(let i=0;i<moveChecks[check].max;i+=moveChecks[check].step){
+      let series=gameBoard[i+moveChecks[check].indexes[0]].toString()+
+      gameBoard[i+moveChecks[check].indexes[1]].toString()+
+      gameBoard[i+moveChecks[check].indexes[2]].toString()+
+      gameBoard[i+moveChecks[check].indexes[3]].toString()
+
+      switch(series){
+          case "1110":
+          case "2220":
+            return i+moveChecks[check].indexes[3]
+      }
+    }
+  }
+};
+
 export const getComputerMove = (gameBoard) => {
   let moveChecks = [
     //vertices
