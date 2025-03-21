@@ -1,6 +1,6 @@
 :root{
-    --background-color:cornflowerblue
-    
+    --background-color:cornflowerblue;
+    --panel-background-color:lightgoldenrodyellow
 }
 
 body{
@@ -17,7 +17,7 @@ body{
 }
 .panel{
     position: absolute;
-    background-color: lightgoldenrodyellow;
+    background-color: var(--panel-background-color);
     border: 8px solid burlywood;
     box-shadow: 7px 5px 15px 3px rgba(0,0,0,0.9);
     z-index: 1;
