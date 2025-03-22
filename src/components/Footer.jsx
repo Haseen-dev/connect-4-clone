@@ -10,6 +10,7 @@ const Footer = ({ onNewGameClick, onSuggestClick, gameState }) => {
         <button onClick={onNewGameClick}>New Game</button>
       )}
     </div>
+    
   );
 };
 
