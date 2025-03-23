@@ -2,6 +2,9 @@
   --background-color: cornflowerblue;
   --panel-background-color: lightgoldenrodyellow;
   --panel-border-color: burlywood;
+  --player-no-player:white;
+  --player-player1:red;
+  --player-player2:blue;
 }
 
 body {
@@ -65,11 +68,11 @@ body {
   background-color: chocolate;
 }
 .player_0 {
-  background-color: white;
+  background-color: var(--player-no-player);
 }
 .player_1 {
-  background-color: red;
+  background-color: var(--player-player1);
 }
 .player_2 {
-  background-color: blue;
+  background-color: var(--player-player2);
 }
