@@ -106,7 +106,7 @@ const GameBoard = () => {
         winPlayer={winPlayer}
       />
       <div style={style}>{initBoard()}</div>
-      <Footer onNewGameClick={initGame} onSuggestClick={suggestMove}/>
+      <Footer onNewGameClick={initGame} onSuggestClick={suggestMove} gameState={gameState}/>
     </>
   );
 };
