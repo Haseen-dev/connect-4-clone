@@ -61,14 +61,12 @@ const GameBoard = () => {
     //this is also update the array state like spread operator
     // gameboard[id] = currentPlayer;
     // setGameboard(gameboard);
-    // console.log(gameboard);
     // setCurrentPlayer(currentPlayer === Player_1 ? Player_2 : Player_1);
 
     // spread operator
     // const board = gameboard;
     // board[id] = currentPlayer;
     // setGameboard(board)
-    // console.log(board);
     if (gameboard[id] !== No_Player) return;
     if (gameState !== GAME_STATE_PLAYING) return;
     if (isWinner(gameboard, id, currentPlayer)) {
