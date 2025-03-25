@@ -54,9 +54,9 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 .footer button {
-  margin-left: 5px;
+  margin-left: 30%;
   margin-top: 15px;
-  width: 140px;
+  width: 180px;
   height: 50px;
   background-color: lightblue;
   font-size: 20px;
